@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944a491f62000b148935593e9de6a46e, type: 3}
+  m_Name: ItemConfig
+  m_EditorClassIdentifier: 
+  <animalSprites>k__BackingField:
+  - {fileID: 1821268665, guid: b74fde105d48efb458db5a9899073cc7, type: 3}
+  - {fileID: 1398455981, guid: b74fde105d48efb458db5a9899073cc7, type: 3}
+  - {fileID: 1141296234, guid: 4a024add4d174c645928472329e8e9ea, type: 3}
+  <colors>k__BackingField:
+  - {r: 0.13751912, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.89133024, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  <shapes>k__BackingField:
+  - {fileID: 1034985987411414741, guid: e16921e3c391c4b46aa72f5ce32f21f2, type: 3}
+  - {fileID: 1034985987411414741, guid: aac0078e930e38f4e9031f1147c32fe5, type: 3}
+  - {fileID: 1034985987411414741, guid: dc8a53ddfd0f00a4fb95a6951069c95f, type: 3}
