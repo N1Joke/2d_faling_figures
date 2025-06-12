@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
+using static Assets._Project.Scripts.Gameplay.FigureSpawner;
 
 namespace GUI
 {
@@ -41,8 +42,11 @@ namespace GUI
         public FigureAddResult AddFigure(FigureView figureView)
         {
             int freeSlotIndex = FindFirstFreeSlot();
-            if (freeSlotIndex == -1)            
-                return FigureAddResult.Loose;             
+            if (freeSlotIndex == -1)
+            {
+                _events.onLoseLevel?.Notify();
+                return FigureAddResult.Loose;
+            }
 
             AddFigureToSlot(figureView.FigureConfig, freeSlotIndex, figureView.shape.sprite, figureView.animal.sprite, figureView.shape.color, figureView.transform.position);
 
@@ -62,6 +66,12 @@ namespace GUI
 
             if (IsContainerEmpty())
                 _events.onBarClear?.Notify();
+            else
+            {
+                int freeSlotIndex = FindFirstFreeSlot();
+                if (freeSlotIndex == -1)
+                    _events.onLoseLevel?.Notify();
+            }
         }
 
         private int FindFirstFreeSlot()
@@ -110,27 +120,33 @@ namespace GUI
         {
             bool foundMatches = false;
 
-            for (int i = 0; i <= _figures.Count - 3; i++)
+            for (int i = 0; i < _figures.Count; i++)
             {
-                if (_figures[i] != null &&
-                    _figures[i + 1] != null &&
-                    _figures[i + 2] != null)
+                if (_figures[i] == null) 
+                    continue;
+
+                FigureConfig baseConfig = _figures[i].Config;
+                List<int> matchingIndices = new List<int> { i };
+
+                for (int j = i + 1; j < _figures.Count; j++)
                 {
-                    FigureConfig config1 = _figures[i].Config;
-                    FigureConfig config2 = _figures[i + 1].Config;
-                    FigureConfig config3 = _figures[i + 2].Config;
+                    if (_figures[j] == null) 
+                        continue;
 
-                    if (config1.animalId == config2.animalId && config2.animalId == config3.animalId &&
-                        config1.colorId == config2.colorId && config2.colorId == config3.colorId &&
-                        config1.shapeId == config2.shapeId && config2.shapeId == config3.shapeId)
+                    if (baseConfig.animalId == _figures[j].Config.animalId &&
+                        baseConfig.colorId == _figures[j].Config.colorId &&
+                        baseConfig.shapeId == _figures[j].Config.shapeId)
                     {
-                        RemoveFiguresAt(i, i + 1, i + 2);
-                        foundMatches = true;
-
-                        i = -1;
+                        matchingIndices.Add(j);
                     }
                 }
-            }
+
+                if (matchingIndices.Count >= 3)
+                {
+                    RemoveFiguresAt(matchingIndices.ToArray());
+                    foundMatches = true;                    
+                }
+            }            
 
             return foundMatches;
         }
@@ -144,7 +160,8 @@ namespace GUI
             {
                 if (index < _figures.Count && _figures[index] != null)
                 {
-                    DestroyImmediate(_figures[index].gameObject);
+                    FigureGUIView figureGUIView = _figures[index];
+                    figureGUIView.transform.DOScale(Vector3.zero, 0.25f).SetLink(figureGUIView.gameObject).OnComplete(() => Destroy(figureGUIView.gameObject));
                     _figures[index] = null;
                 }
             }
@@ -156,12 +173,12 @@ namespace GUI
 
             for (int i = 0; i < _figures.Count; i++)
             {
-                if (_figures[i] != null)                
-                    compactedFigures.Add(_figures[i]);                
+                if (_figures[i] != null)
+                    compactedFigures.Add(_figures[i]);
             }
 
-            while (compactedFigures.Count < _slots.Length)            
-                compactedFigures.Add(null);            
+            while (compactedFigures.Count < _slots.Length)
+                compactedFigures.Add(null);
 
             _figures = compactedFigures;
 
@@ -170,7 +187,7 @@ namespace GUI
                 if (_figures[i] != null)
                 {
                     _figures[i].transform.SetParent(_slots[i]);
-                    _figures[i].transform.localPosition = Vector3.zero;
+                    _figures[i].transform.DOLocalMove(Vector3.zero, 0.25f).SetLink(_figures[i].gameObject);
                 }
             }
         }
@@ -179,8 +196,8 @@ namespace GUI
         {
             foreach (var figure in _figures)
             {
-                if (figure != null)                
-                    return false;                
+                if (figure != null)
+                    return false;
             }
             return true;
         }
@@ -189,10 +206,11 @@ namespace GUI
         {
             _figures.Clear();
 
-            for (int i = 0; i < _slots.Length; i++)            
-                _figures.Add(null);            
-
-            Utils.ClearTransformChilds(_parent);
+            for (int i = 0; i < _slots.Length; i++)
+            {
+                Utils.ClearTransformChilds(_slots[i]);
+                _figures.Add(null);
+            }
         }
     }
 }

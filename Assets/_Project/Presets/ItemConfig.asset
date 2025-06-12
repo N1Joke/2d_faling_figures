@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: 1398455981, guid: b74fde105d48efb458db5a9899073cc7, type: 3}
   - {fileID: 1141296234, guid: 4a024add4d174c645928472329e8e9ea, type: 3}
   <colors>k__BackingField:
-  - {r: 0.13751912, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0.89133024, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.47450984, g: 0.85098046, b: 0.14901961, a: 1}
+  - {r: 0, g: 0.6627451, b: 0.9960785, a: 1}
+  - {r: 1, g: 0.5647059, b: 0.14901961, a: 1}
   <shapes>k__BackingField:
   - {fileID: 1034985987411414741, guid: e16921e3c391c4b46aa72f5ce32f21f2, type: 3}
   - {fileID: 1034985987411414741, guid: aac0078e930e38f4e9031f1147c32fe5, type: 3}

@@ -9,5 +9,6 @@ namespace Assets._Project.Scripts.Events
         public ReactiveEvent onRestart;
         public ReactiveEvent onBarClear;
         public ReactiveEvent onWinLevel;
+        public ReactiveEvent onLoseLevel;
     }
 }

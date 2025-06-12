@@ -59,7 +59,7 @@ namespace Assets._Project.Scripts.Gameplay
                     if (config > _uniqueConfigs.Count)
                         config = 0;
                     Transform spawnPoint = _ctx.spawnPoints[randomPosIndexes[i]];
-                    Vector3 spawnPosition = spawnPoint.position + Vector3.up * row * 1.5f;
+                    Vector3 spawnPosition = spawnPoint.position + new Vector3(Random.Range(-0.25f, 0.25f), row * 1.5f);
 
                     InitializeFigure(spawnPosition, _uniqueConfigs[config]);
                     figuresSpawned++;

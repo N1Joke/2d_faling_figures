@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0260ff2daa2dcf7408aa7c0ff65fe1cc, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  countFigures: 15
+  countFigures: 27
   maxVariants: 27

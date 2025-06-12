@@ -40,7 +40,7 @@ namespace MonoInstallers
                 onBarClear = _events.onBarClear,
                 onWinLevel = _events.onWinLevel,
             }));
-            _disposables.Add(new FigureDetector(_guiView.figureContainer));
+            _disposables.Add(new FigureDetector(_guiView.figureContainer));            
         }
 
         private void OnDestroy()
