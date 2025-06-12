@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 1398455981, guid: b74fde105d48efb458db5a9899073cc7, type: 3}
   - {fileID: 1141296234, guid: 4a024add4d174c645928472329e8e9ea, type: 3}
   <colors>k__BackingField:
-  - {r: 0.47450984, g: 0.85098046, b: 0.14901961, a: 1}
+  - {r: 1, g: 0.06132078, b: 0.41942936, a: 1}
   - {r: 0, g: 0.6627451, b: 0.9960785, a: 1}
   - {r: 1, g: 0.5647059, b: 0.14901961, a: 1}
   <shapes>k__BackingField:

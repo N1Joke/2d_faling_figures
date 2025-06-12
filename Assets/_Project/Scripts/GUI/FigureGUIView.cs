@@ -8,6 +8,7 @@ namespace Assets._Project.Scripts.GUI
     {
         [field: SerializeField] public Image animal { get; private set; }
         [field: SerializeField] public Image shape { get; private set; }
+        [field: SerializeField] public Image colorShape { get; private set; }
 
         private FigureConfig _config;
         public FigureConfig Config => _config;
@@ -17,7 +18,8 @@ namespace Assets._Project.Scripts.GUI
             _config = figureConfig; 
             this.animal.sprite = animal;
             this.shape.sprite = shape;
-            this.shape.color = color;
+            this.colorShape.sprite = shape;
+            this.colorShape.color = color;
         }
     }
 }

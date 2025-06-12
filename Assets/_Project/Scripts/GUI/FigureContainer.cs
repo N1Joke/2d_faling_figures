@@ -48,7 +48,7 @@ namespace GUI
                 return FigureAddResult.Loose;
             }
 
-            AddFigureToSlot(figureView.FigureConfig, freeSlotIndex, figureView.shape.sprite, figureView.animal.sprite, figureView.shape.color, figureView.transform.position);
+            AddFigureToSlot(figureView.FigureConfig, freeSlotIndex, figureView.shape.sprite, figureView.animal.sprite, figureView.colorShape.color, figureView.transform.position);
 
             StartCoroutine(WaitAndCheckMatches());           
 
