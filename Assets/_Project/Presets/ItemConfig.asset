@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ItemConfig
   m_EditorClassIdentifier: 
   <animalSprites>k__BackingField:
-  - {fileID: 1821268665, guid: b74fde105d48efb458db5a9899073cc7, type: 3}
-  - {fileID: 1398455981, guid: b74fde105d48efb458db5a9899073cc7, type: 3}
-  - {fileID: 1141296234, guid: 4a024add4d174c645928472329e8e9ea, type: 3}
+  - {fileID: 661555710, guid: 8341e0c0219f78a49991477e8d5029ca, type: 3}
+  - {fileID: -1733136338, guid: 8341e0c0219f78a49991477e8d5029ca, type: 3}
+  - {fileID: -1446093047, guid: 8341e0c0219f78a49991477e8d5029ca, type: 3}
   <colors>k__BackingField:
   - {r: 1, g: 0.06132078, b: 0.41942936, a: 1}
   - {r: 0, g: 0.6627451, b: 0.9960785, a: 1}

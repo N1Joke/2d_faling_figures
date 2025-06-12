@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a024add4d174c645928472329e8e9ea
+guid: 8341e0c0219f78a49991477e8d5029ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -136,22 +136,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3
+      name: animal_0
       rect:
         serializedVersion: 2
-        x: 252
-        y: 715
-        width: 212
-        height: 216
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1
+        y: 2
+        width: 207
+        height: 209
+      alignment: 9
+      pivot: {x: 0.49223483, y: 0.31222212}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02176a80408e4b9479287d47d08e207f
-      internalID: 1141296234
+      spriteID: 62849ce156bf4934b87d6af5accdf946
+      internalID: 661555710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animal_1
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 16
+        width: 189
+        height: 148
+      alignment: 9
+      pivot: {x: 0.5014172, y: 0.3805326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58dee5882e6a165498b015668d2f63be
+      internalID: -1733136338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animal_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 46
+        width: 183
+        height: 155
+      alignment: 9
+      pivot: {x: 0.5409893, y: 0.3427189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9526a206ae9618e4d909da6df201ec5d
+      internalID: -1446093047
       vertices: []
       indices: 
       edges: []
@@ -167,7 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      3: 1141296234
+      animal_0: 661555710
+      animal_1: -1733136338
+      animal_2: -1446093047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
