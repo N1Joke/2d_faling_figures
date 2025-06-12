@@ -109,22 +109,20 @@ namespace Assets._Project.Scripts.Gameplay
             _uniqueConfigs.Shuffle();
         }
 
-        private void AddGroup(List<FigureConfig> configs, int colorId, int shapeId, int animalId)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                configs.Add(new FigureConfig
-                {
-                    colorId = colorId,
-                    shapeId = shapeId,
-                    animalId = animalId
-                });
-            }
-        }
-
         private void InitializeFigure(Vector3 spawnPosition, FigureConfig config)
         {
             FigureView figure = GameObject.Instantiate(_ctx.config.shapes[config.shapeId], spawnPosition, Quaternion.identity, _ctx.parent);
+
+            if (Random.Range(0, 101) <= 10)
+            {
+                figure.SetConfig(_ctx.config.heavyConfig);
+            }
+            //does not work, there are errors
+            //else if (Random.Range(0, 101) <= 5)
+            //{
+            //    figure.SetConfig(_ctx.config.stickyConfig);
+            //}
+
             figure.Setup(
                 config,
                 _ctx.config.animalSprites[config.animalId],

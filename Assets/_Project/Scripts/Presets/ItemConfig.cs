@@ -10,5 +10,7 @@ namespace Assets._Project.Scripts.Presets
         [field: SerializeField] public Sprite[] animalSprites { get; private set; }
         [field: SerializeField] public Color[] colors { get; private set; }
         [field: SerializeField] public FigureView[] shapes { get; private set; }
+        [field: SerializeField] public BehaviorFigureConfig heavyConfig { get; private set; }
+        [field: SerializeField] public BehaviorFigureConfig stickyConfig { get; private set; }
     }
 }

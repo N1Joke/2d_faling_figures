@@ -24,3 +24,15 @@ MonoBehaviour:
   - {fileID: 1034985987411414741, guid: e16921e3c391c4b46aa72f5ce32f21f2, type: 3}
   - {fileID: 1034985987411414741, guid: aac0078e930e38f4e9031f1147c32fe5, type: 3}
   - {fileID: 1034985987411414741, guid: dc8a53ddfd0f00a4fb95a6951069c95f, type: 3}
+  <heavyConfig>k__BackingField:
+    figureType: 1
+    heavyMultiplier: 2
+    stickyRange: 1.5
+    stickyForce: 10
+    icon: {fileID: 21300000, guid: 8bff2ccd849a55145a80b0d4d6918470, type: 3}
+  <stickyConfig>k__BackingField:
+    figureType: 2
+    heavyMultiplier: 2
+    stickyRange: 1.5
+    stickyForce: 10
+    icon: {fileID: 21300000, guid: 565d0e545b84b774fbd84e42b94ba0ef, type: 3}

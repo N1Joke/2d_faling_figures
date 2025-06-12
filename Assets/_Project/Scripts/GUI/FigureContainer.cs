@@ -8,7 +8,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
-using static Assets._Project.Scripts.Gameplay.FigureSpawner;
 
 namespace GUI
 {
